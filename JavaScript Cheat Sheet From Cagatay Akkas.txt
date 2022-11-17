@@ -1,0 +1,163 @@
+Starting:02.07.2022,Finishing:10.07.2022
+Producer: Çağatay Akkaş
+      General
+-High Level language -> Bytecode -> Machine Code
+-JIT compiler "Just in time" = compiler + interpreter
+-JavaScript is interpreted language
+-JavaScript is a single-threaded and non-blocking language.
+-Call Stack -> where we are on the code / Memory Heap-> allocating memory
+-Stack overflow -> calling lots of functions inside of functions and fulling stack
+-Garbage collector: "Mark and sweep" , in low level languages (exp:C) you done it manually=memort efficent
+-JavaScript is single threaded
+-setTimeout always comes after stack goes empty
+-For print-> console.log("Hello World!" + "this is how you add new things")
+-Lexical/Static scope -> functions can access upper(parent) nested function's variables
+-Dynamic scope ->
+-Methods: property of an object which contains function definition in it
+-Contex = what is the value of "this" keyword
+-Type of null is null normaly .But typeof null = object
+-Functions normally objects but typeof function = function
+-var a=5 -> var b=a -> b++ => a=5 , b=6
+-For objects/arrays(also objects) if we do a=b with objects when we change a variable we also change the other ones value
+-We can clone objects with let clone =Object.assign({},obj) = let clone2={...obj}
+-For deep copy -> let superClone = JSON.parse(JSON.stringify(obj))
+-Static typing languages decleares variables with spesific variable types (exp. int number1)
+-JavaScript is dynamic typed language with weak typing. (exp. a="hello" -> a+17 = "hello17")
+-While taking input from user on web -> prom (it turns values to strings)
+-We are putting ";" at the end of expressions
+-We can write strings with  `  and we can type variables in it (exp.{$name})
+-debugger -> it stops the program and give us the values of variables then we can continue step by step
+-All constructor functions need to start with uppercase (unwritten rules)
+
+
+      Hoisting
+!-When we start function its like re running -> if we have var in func. it will be undefined
+-Let and cosnt are not hoist as defoult as var but they also hoist in different way
+   
+      Functions
+-function() = () =>
+-For functions returns another funcitons we call nested ones with: functionname()() -> this will only give inner functions return
+!-Normaly if you type variable in function without var,const... it will make it a global variable = leak problem so-> we type "use strict" at the top of our code to avoid that
+-var x=function y(){} -> we cant access x from global
+-(function(){})() == (function(){}())-> in this, our variables cannot be reached from outside even the ones which decleared with var
+-Closures : child scope of function will remember upper's variables when called
+-Compose : (f,g) => (a) => f(g(a)); (exp. const sum =(num) => num+1 -> compose(sum,sum)(5) -> this will return 7
+-Deterministic : the same outputs will always give the same output and not affect outside(side effect) of it its deterministic
+-Map -> iterates loop through but stores and returns information (exp. returns an array)
+-Filter -> array.filtre(num => num> 5); -> it will return the ones greater than 5
+-Reduce : const reduceArray = array.reduce((acc,num)=> {return acc + num} ,0) -> this will add 0th value to 0 then will add 1st value to that result and so on
+-functions dynamicaly scoped / arrow functions lexically scoped
+-pure functions : The functions which does not affect outside of their scope and same inputs always need to return same outputs
+!- function a(){console.log("hi")} -> is not a pure function becouse for log it affects window
+
+      If
+-with var we can decleare in "if" and accces from outside
+-We need to use === for comparing (also !== for not equal)
+
+      For
+!-with var :when we decleare and increase value of variable in "for", we can access out of it as incremented value
+!-with let:we cant access variable which created in "for"
+-forEach(function(i){})
+-for of -> (exp. for (item of basket){}) -> iterating
+-for in -> works with objects -> (exp. for (item in basket){})->! this is not iterating its numerating
+ 
+      This
+!!!-If we decleare var function inside an object this calls for window however if we use => (exp. var anotherfunc=() => {}) "this" will be call object
+!-We can also decleare another variable and assign it as "this" (exp. var self = this) and we will call self after we decleare another function inside object
+-And we can also use bing keyword for solving it 
+
+      Call
+-Exp. wizard.heal.call(archer) -> we are using another objects function in our object
+-Difference between "apply" is while giving more than one parameter with call(archer, 1,2) with apply(archer,[1,2])
+-Difference between "bind" is it also takes parameters as "call" but it returns function so we assing result to variable and calling this variable make them same with "call"
+      Currying
+-Giving partial parameter to objects with this (exp. let multiplyByTwo = multiply.bind(this,2)) ) when we do console.log(multiplyByTwo(4)) it will give 8
+-  
+
+      Ternary
+-condition ? expression1 : expression2 -> if condition is true then expression 1 will initialized
+-
+      Switch
+-switch(x){case "case1": y="case1 started"; break; }
+
+      Class
+-Instantiation:  class Classname{constructor(name,surname){this.name=name; this.surname=surname;}}
+-extends -> makes child class -> class lower extends upper
+-super() -> calls the constructor of upper class
+      ES7
+-includes: "hello".includes(o) -> will give true
+
+      ES8
+-pads-> padStart()/padEnd() : "hello".padStart(3) -> will put 3 spaces before hello
+
+      E9
+-objectSpread:
+
+      ES10
+-flat() -> const array=[1,2,[3,4],5] -> array.flat() -> [1,2,3,4,5] 
+-trimStart()/trimEnd()  -> deletes the empty parts of the start/end of the string 
+-fromEntries(arrayName) -> turns available arrays to objects
+
+     ES2020
+-BigInt -> after pasing MAX_SAFE_INTEGER (exp. 1n -> we are declearing big int with n)
+-Optinal Chaining Operator -> for checking variables insides of the objects (exp. let weight= person?.day?.weight) -> if this object has person and day it will take weight
+-Nullish Coalescing Operator = ?? : doesnt check falsy , it checks is the variable defined or undefined
+
+      ES2021
+-repplaceAll -> str.replaceAll("old" , "new") -> this will change olds to news
+  
+
+
+      Prototypal Inheritance 
+-__proto__ : we are using for inheriting (exp. subClass.__proto__ = upperClass;)
+-__proto__ inherits all variables and methods , if the subClass has the same method it not overrides it
+-for checking inheritance -> upper.isPrototypeOf(lower)-> will give true
+-hasOwnProperty(numberX)
+-create -> Object.create(upperObjectName)
+
+
+      OOP
+-new (exp. const name = new funcName () -> name.variable )
+-prototype gives function the functions we want (exp.upper.prototype.attack(){return "attack"})
+-only functions can access prototypes 
+
+
+      Classes
+-JavaScript has classes however they still prototype inheritance
+
+
+      Inheritance
+-class subClass extends upperClass{}
+-We are calling upper constructor in lower contructor with super()
+-For private variables we are using "#"
+
+
+
+      Idempotence
+-Methods always can be invoked as many times wihout different outcome
+
+
+
+      Compose
+-Using different functions to achieve result (exp. const muliplyByTwoAndAbsolute= com(funcName1, funcName2))
+-We generally use libraries to compose which found from the internet(Randa)
+-Compose works from left to right Pipe same thing runs from left to right
+
+
+      Concat
+-Used for merging two arrays (exp. array1.concat(array2))
+
+
+      Promise
+-.then
+-Promise.all
+
+
+
+
+
+
+
+
+
+

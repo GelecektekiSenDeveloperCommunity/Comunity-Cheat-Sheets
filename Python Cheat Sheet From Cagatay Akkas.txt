@@ -1,0 +1,271 @@
+Producer:Çağatay Akkaş
+Starting:03.06.2022 Ending:02.07.2022
+-input("Enter an input") 
+-!!! input is a string so for taking integer we need to use flash cast on variable
+-Fundemental data types : int, float, bool, str, list, tuple,set,dict +none
+-2**2 = 2^2
+- 5 // 4 = 1 rounds=> round(x)
+-abs(x) absolute value
+-print("0", end=0) not going to create new line
+-n := len(a) n has len(a)  -> walrus operato
+-While writing class names use capital for each new word start
+-dir and help show about useable functions or other things
+-from time import time
+-sys.argv -> while using scprits it takes inputs as string 
+-While using pip use pip3 install x
+-Py Pı -> for best imports
+-from collections import Counter ,defaultdict,OrderedDict
+-We can use array with from array import array -> they are faster but not changeable
+-pdb -> python debugger import pdb -> then pdb.action
+-Regular expressions import re -> re.action
+-What func can we use -> dir(x)
+-idempotent = given same input always give same output
+-
+            Strings
+-string -> str 
+-print(number1,number2)
+- long string ->''' long string can take even dlfferent lines '''
+- doc string if we write ''' x ''' in a function then when we about to write parameters machine gives that comments -> also for accesing these comments help(func()) or func.__doc__
+-print(f "hi {name} you are {age}")
+-print(name[0:2]) print index to 2 teo is NOT included 0 included
+-print(name[0:2:2]) same with up but skip 1 more character before taking next
+-print(name[::-1]) reverse the name
+-len(x) lengthdir uzunlugu verir
+-name.upper() -> all characters will be upper
+-name.capitalize() -> only make upper first char at sentence
+-name.lower()
+-name.find() find the first position of x
+-name.replace(x,y) replace x with y
+-new_cart = amazon_Cart[:] -> copy
+- new_cart = amazon_cart -> if we cange something on new cart it also changes amazon because they are pointing same at memory
+- a[:-1] deletes last char on string
+-
+        Lists
+-append add 1 at the end extend can add multiple
+-we can pop specifit location pop(x)
+-remove(4) removes the value not the index
+-index(x) shows the index of x on list index(a,0,3) shows if a in 0-3
+-("a" in basket) gives bool value can also be done for strings
+-count(x) shows how many time x used in list
+-sort() sorts 
+-sorted(listname) !! creates new copy of list and sort it not change real list
+-copy() copies list(:) also copies
+-reverse() reverse it
+-join([a]) add a to every element in the list which join used on
+-a,b,c, *other = [1,2,3,4,5,6,7,8] a-b-c = 1-2-3 other = 4,5,6,7,8
+
+              Dictionary
+-dic={"a" : 1 } print(dictiionary["a"]) = 1
+- dictionary not indexed/ordered ,random on memory 
+-keys needs to be immutable so lists cannot be list
+-same keys can override each other
+-for cheking keys in dict get()
+- for check and add get("age",20) check if no age create and put 20 else just say yes we have age key
+-dict also can create dictionary but nor a common use
+-update({}) updates
+-.items / .values /.keys imporant shorcuts
+
+         Tuple
+-list but cannot changed 
+-tuple = (1,2,3)
+-
+
+        Set
+-has no duplicates
+-myset = {1,2,3,4,5}
+-not have indexing
+-x.difference(y) both xy sets
+-x.difference_update(y) both xy sets sames are removed from x
+-discard() discards
+-intersection()/ & is used rarely
+-isdisjoint() true means they have notting common
+-union() add each sets
+-issubset()
+-issuperset()
+
+
+       if
+-elif = else if  we are using elif in python
+-and we are using this direcly
+-turthy falsy if it not 0 none or some other specific things it is truthy
+-ternary operator can_maessage="allowed" if is_friend else "not allowed"
+-(10==10.0) true but (10 is 10.0) false
+
+     For
+-for item in (1,2,3,4) print(item) will print 1 2 3 4
+-ints are not iterable
+- numerate for i,char in enumarate("hello") i will be index char will be char
+-break also works for for also continiou and pass(passes that line)
+
+     While
+-while a<40 :
+-is break happens in while else after it not works
+-
+
+   Function
+-def name():
+-when we call it just say name()
+-if we define parameters in () if we call with parameters they will overriden however if we call without parameters they will be default
+-func(*args) -> we can give as much parameter as we want
+-func(**kwargs) -> we can give parameters like num1=5
+-order is params , *args , defaulth parameters , **kwargs
+-we can access global variables with global keyword
+-if we have nested funcs the inner one can change variable in higher one
+-we can put another funcions inside parameter part -> higher order function 
+-
+
+    Clean coding
+-num%2 ==0 
+
+    OOP
+-if we can use . on something it is an object
+-class x: membership=True -> class object attribute 
+-for accesing object attributes we need to use self.attributename
+-!! we can use the variables which we create under same class but in different fucyion with self.nameofvariable
+-
+   Constructor
+-__init__(self,name): -> __x__ dunder method
+self.name=name - attribute
+-
+   Methods
+-@classmethod 
+def adder(cls,num1,num2): return num1+ num2
+-cls refers to class so we can use cls() and start a class
+-@staticmethod
+def adder(num1,num2): no cls
+-
+    Classes
+- there is no private in pyton we using _name for making programmers to understand it is private
+-İnheitance -> class (nameOfOtherClass):
+-isinstance(nameofobject,namefclass)
+-main base class of all objects in python is object
+-super().__init__(mail) -> usage of super
+-multiple inheritance -> class under(upname1 , upname2):
+-we can use def __iter__(self): return self -> this class now iterable
+-def __next__(self): things you want -> no we can use next and we will assign what will happen when we use here
+-
+     Dunder
+-def __str__(self): -> we can modify dunder methods
+-
+
+   Fuctional programming
+-pure function -> needs to give same output with same input + needs to not affect ourside of function(like print)
+-map(fucntionname, paramaters) 
+-filter if return is true keeps it
+-zip(iterable1, iterable2 ... (we can put as many we want)) -> it zips  with iterable1's 1 and it.2's 1 zips it (index sıralarına gore alıp zipliyor)
+-reduce to use we need to import -> write from functools import reduce to start
+reduce(function, iteratible data , initial value)
+-lambda functions -> we only run them once -> lambda item: item*2 , mylist
+exp: a.sort(key:lambda x: x[1]) -> a listesindeki elemanları 2. degerlere gore listeler (9,2) < (1,3)
+-list comprehension list= [num*2 for num in range(0,100) if num %2 ==0 (if part optional)] -> create variable then use it
+-decorator
+@funcname
+def hello() -> this will also start inside funcname
+-
+    Error Handling 
+-try:  except: -> also can write except ValueError: -> exp.
+-finally: always will run
+-continue goes to start of loop again
+-raise ValueError("errorlandın") -> making error yourself
+-
+
+
+     Generators
+-they not keep place in moemory + we can iterate on them  exp. range
+-yield number -> it stops loop and returns value if we want next element we can use next outside
+- iter(iterable)
+-
+
+
+   Modules
+-modules all letters are lower and for space use _
+-we are using import nameOfFile
+-when importing modules in packages -> packageName.moduleName
+-we need to put __init__.py module in package
+-if we have package in package we will use from NameOfFile1.NameOfFile2 
+-and for taking func in them manually after these write import funcName
+-!! we can from nameOfPackage import * will import all functions
+-
+   Random
+-random-> we have choice/shuffle/
+
+   File I/O -> input/output
+-for starting from scracth open("name.txt",mode="w") -> this will initialize the file
+-filename.readline() -> 1 line / .readlines() -> all lines
+-filename.close() 
+-for not using close we can do -> with open("filename.txt") as file:
+-for writing open("filename.txt",mode="w") -> for both read and write use mode="r+"
+-mode="a" appends only add at the end
+-filename.write("XD")
+-for path open("app\name.txt",mode="r")    
+-
+       Testing
+-import unittest
+-class testname(unittest.TestCase):
+-the commends we put on test also shown on terminal
+-def setUp(self): -> always works before each fucns on tests
+-def tearDown(self): -> always works after all funcs
+-
+
+    Image processing
+-Image.open("./ x")-> ./ means at out current location 
+-imagename.save("name.png","png")
+-from PIL import Image
+-BLUR/Convert("")/filter/rotate/resize((x,y))/crop(x,y,z,c)/thumbnail((x,y))-> only modify the one not return new and it keep aspect ratio
+   Pdf
+-import PyPDF2 
+-open("x","rb") as file:
+-numPages/getPage()/rotate()/
+-merger -> command name no need to import it combines pdfs
+-
+   Email
+-build in 
+-import smtplib -> gives server for mail
+-from email.message import EmailMessage
+-
+
+   Web Scraping
+-getting data from websites
+-write /robots.txt to see backdata
+-Beatiful Soup web screaping lib
+-from bs4 import BeautifulSoup
+-import requests for downloading data
+-use .classname for select and #id for id
+-use get("href") to get links
+-import pprint -> and for use pprint.pprint(x)
+
+
+    Website Making
+-Flask and django lib for python
+-if we have same named route no override first one will go
+
+   Automation
+-cheatsheat -> http://allselenium.info/python-selenium-commands-cheat-sheet-frequently-used/
+
+   Machine Learning
+-supervised->we can make classes and divide elements
+-unsupervised-> data not has labels . No categories given machine creates them
+-reinforcement-> learn with loses and try to do themselves exp:get highest point
+-1)import data 2)clean data 3)split data -> Training set/Test Set 4)make a model 5)check the output 6)Improve 
+-NumPy library / Pandas Library / Scilit Learn Library/Matplotlib Library/Jupyter Notebook/Kaggle
+- panda cheatsheet -> https://elitedatascience.com/python-cheat-sheet /https://github.com/GokuMohandas/Made-With-ML/blob/4ad626098aca25db5628fe67895e738d5a5c2c2a/notebooks/03_Pandas.ipynb
+-https://github.com/aneagoie/ML-Notes/blob/master/soccer.ipynb ->soccer
+-
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
